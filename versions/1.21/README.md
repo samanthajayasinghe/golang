@@ -1,6 +1,6 @@
 # Go Version : 1.21
-release date : 2023-08-08
-release notes : https://go.dev/doc/go1.21
+* release date : 2023-08-08
+* release notes : https://go.dev/doc/go1.21
 
 ## New Features
 ### Changes to the language

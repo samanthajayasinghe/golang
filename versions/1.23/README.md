@@ -1,6 +1,6 @@
 # Go Version : 1.23
-expected release date : 2024-08
-release notes : https://tip.golang.org/doc/go1.23
+* expected release date : 2024-08
+* release notes : https://tip.golang.org/doc/go1.23
 
 ## New Features
 ### Changes to the language
