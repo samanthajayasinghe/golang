@@ -1,6 +1,6 @@
 # Go Version : 1.22
-release date : 2024-02-06
-release notes : https://tip.golang.org/doc/go1.22
+* release date : 2024-02-06
+* release notes : https://tip.golang.org/doc/go1.22
 
 ## New Features
 ### Changes to the language
