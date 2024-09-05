@@ -22,14 +22,15 @@ func fanIn(input1, input2 <-chan string) <-chan string {
 	c := make(chan string)
 	go func() {
 		for {
-			c <- <-input1
+			select {
+			case s := <-input1:
+				c <- s
+			case s := <-input2:
+				c <- s
+			}
 		}
 	}()
-	go func() {
-		for {
-			c <- <-input2
-		}
-	}()
+
 	return c
 }
 
@@ -45,10 +46,4 @@ func boring(msg string) <-chan string {
 }
 
 // Note
-//var c chan string
-
-// sending to channel
-//c <- 1
-
-// Receiving from channel
-//value := <-c
+// Multiplexing
