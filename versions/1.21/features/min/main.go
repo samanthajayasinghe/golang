@@ -30,9 +30,9 @@ func minOfMultipleInt() {
 
 func minOfMultipleString() {
 	var a, b, c string
-	a = "foo"
-	b = "bar"
-	c = "abc"
+	a = "aaa"
+	b = "aab"
+	c = "aac"
 	m := min(a, b, c)
 	fmt.Printf("min of %s,%s,%s is %s \n", a, b, c, m)
 }

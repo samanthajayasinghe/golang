@@ -15,7 +15,7 @@ func main() {
 func clearSlice() {
 	primes := [...]int{0, 1, 2, 3, 5, 7, 11, 13}
 	fmt.Printf("Before clearing slice %d \n", primes)
-	clear(primes[2:4])
+	clear(primes[0:2])
 	fmt.Printf("After clearing 2:4 element of the slice %d \n", primes)
 }
 
