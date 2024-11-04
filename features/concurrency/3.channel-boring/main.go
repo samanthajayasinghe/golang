@@ -9,9 +9,10 @@ func main() {
 
 	c := make(chan string)
 
-	go boring("boring", c)
+	go boring("boring A", c)
+	go boring("boring B", c)
 
-	for i := 0; i < 5; i++ {
+	for i := 0; i < 10; i++ {
 		fmt.Printf("You say: %q\n", <-c)
 
 	}
@@ -28,7 +29,7 @@ func boring(msg string, c chan string) {
 
 // ========== Notes ==============
 
-//var c chan string
+/////var c chan int
 
 // sending to channel
 //c <- 1

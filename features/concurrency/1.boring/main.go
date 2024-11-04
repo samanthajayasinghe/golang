@@ -6,9 +6,7 @@ import (
 )
 
 func main() {
-
 	boring("boring")
-
 }
 
 func boring(msg string) {

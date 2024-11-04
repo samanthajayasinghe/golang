@@ -7,9 +7,13 @@ import (
 
 func main() {
 
-	go boring("boring")
-	//time.Sleep(time.Duration(5 * time.Millisecond))
-	//fmt.Print("You are boring; I'm leaving")
+	go boring("boring A")
+	go boring("boring B")
+	go boring("boring C")
+
+	boring("boring Main")
+	//time.Sleep(time.Duration(10 * time.Millisecond))
+	fmt.Print("You are boring; I'm leaving")
 }
 
 func boring(msg string) {
