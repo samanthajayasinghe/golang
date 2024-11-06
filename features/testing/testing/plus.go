@@ -5,5 +5,6 @@ func Plus(a int, b int) int {
 }
 
 func Minus(a int, b int) int {
+	// time.Sleep(2 * time.Second)
 	return a - b
 }
