@@ -3,6 +3,7 @@
 ## How to run benchmark tests
 
 ```
+# With all cores
 go test -bench=.
 
 go test -bench=. -cpu=1,2,4,12 

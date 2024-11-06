@@ -13,8 +13,9 @@ func makeRandomNumberSlice(n int) []int {
 	return numbers
 }
 
-// const LENGTH = 10_000
-const LENGTH = 100
+const LENGTH = 10_000
+
+//const LENGTH = 100
 
 func BenchmarkBubbleSort(b *testing.B) {
 	for i := 0; i < b.N; i++ {
