@@ -1,0 +1,42 @@
+# Debugging Go Code 
+
+## Debug extensions 
+* GDB ( GNU Project Debugger ) 
+* [Delve](https://github.com/go-delve/delve) 
+
+
+## How to install Delve
+```
+$ git clone https://github.com/go-delve/delve
+$ cd delve
+$ go install github.com/go-delve/delve/cmd/dlv
+```
+
+## How to debug go code with Delve
+```
+dlv debug main.go
+## Add break point 
+break ./main.go:14
+contunue
+print {varname}
+```
+
+## How to debug with vscode 
+Create a launch Json file with config 
+```
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Launch Main debug",
+            "type": "go",
+            "request": "launch",
+            "mode": "debug",
+            "program": "${workspaceFolder}/features/debug/main.go",
+            "env": {
+                "GO111MODULE": "on"
+            }
+        }
+    ]
+}
+```
