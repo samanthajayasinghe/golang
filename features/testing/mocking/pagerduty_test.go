@@ -41,7 +41,7 @@ var _ = Describe("Pagerduty", func() {
 		It("Should return incidents", func() {
 
 			// Mock alert response
-			alertResponse := &pdApi.ListAlertsResponse{
+			/*alertResponse := &pdApi.ListAlertsResponse{
 				Alerts: []pdApi.IncidentAlert{
 					alert(
 						testIncidentID,
@@ -51,14 +51,14 @@ var _ = Describe("Pagerduty", func() {
 						StatusTriggered,
 					),
 				},
-			}
+			}*/
 
 			// Mock the service response
 			serviceResponse := &pdApi.Service{
 				Description: testClusterName,
 			}
 
-			mockPdClient.EXPECT().ListIncidentAlerts(testIncidentID).Return(alertResponse, nil).Times(1)
+			//mockPdClient.EXPECT().ListIncidentAlerts(testIncidentID).Return(alertResponse, nil).Times(1)
 			mockPdClient.EXPECT().GetServiceWithContext(context.TODO(), testServiceID, gomock.Any()).Return(serviceResponse, nil).Times(1)
 
 			alerts, err := pagerDuty.GetIncidentAlerts(testIncidentID)

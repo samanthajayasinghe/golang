@@ -4,7 +4,7 @@ Go's built-in support for unit testing makes it easier to test as you go. Specif
 ## How to execute test
 ```
 go test -v
-go test -v -parallel
+go test -v -parallel=3
 ```
 
 ## test coverage 

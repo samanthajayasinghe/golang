@@ -1,0 +1,15 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Launch Main debug",
+            "type": "go",
+            "request": "launch",
+            "mode": "debug",
+            "program": "${workspaceFolder}/features/debug/main.go",
+            "env": {
+                "GO111MODULE": "on"
+            }
+        }
+    ]
+}

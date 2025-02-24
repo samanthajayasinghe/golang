@@ -40,3 +40,24 @@ Create a launch Json file with config
     ]
 }
 ```
+More Info 
+
+
+https://github.com/golang/vscode-go/wiki/debugging
+
+## Remote Debugging 
+
+In launch Json 
+```
+{
+    "name": "Launch Remote",
+    "type": "go",
+    "request": "attach"
+    "mode": "remote",
+    "remotePath": "{remote path}",
+    "port": 2345,
+    "host": "{host}",
+    "cwd": "${workspaceFolder}",
+    "trace": "verbose"
+}
+```
