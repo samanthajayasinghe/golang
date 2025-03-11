@@ -1,16 +1,15 @@
 package main
 
-import (
-	"fmt"
-	"time"
-)
+import "fmt"
 
 func main() {
-	for i := 0; i < 10; i++ {
-		go func(i int) {
-			fmt.Println(i)
-		}(i)
-	}
-
-	time.Sleep(1 * time.Second)
+	done := make(chan bool)
+	m := make(map[string]string)
+	m["name"] = "world"
+	go func() {
+		m["name"] = "data race"
+		done <- true
+	}()
+	fmt.Println("Hello,", m["name"])
+	<-done
 }

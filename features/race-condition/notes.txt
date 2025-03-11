@@ -1,0 +1,7 @@
+References 
+Ref : https://go.dev/blog/race-detector
+Wiki : https://en.wikipedia.org/wiki/Race_condition
+Dev : https://go.dev/doc/articles/race_detector
+
+Example : https://www.naukri.com/code360/library/go-race-condition-in-golang
+https://thinhdanggroup.github.io/golang-race-conditions/

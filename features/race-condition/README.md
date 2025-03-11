@@ -1,4 +1,5 @@
-## Go Race condition 
+## Go Race conditions 
+Race conditions are among the most insidious and elusive programming errors. They typically cause erratic and mysterious failures, often long after the code has been deployed to production. While Go’s concurrency mechanisms make it easy to write clean concurrent code, they don’t prevent race conditions.
 
 ### What is a race condition?
 A race condition occurs when multiple threads try to access and modify the same data.
@@ -10,8 +11,14 @@ A race condition occurs when multiple threads try to access and modify the same 
 
 The Go race detector is an invaluable tool for identifying race conditions in your code. It works by dynamically analyzing your program to detect concurrent access to shared variables, where at least one access is a write. When a race condition is detected, the race detector provides detailed information about the conflicting accesses.
 
+### Using the race detector
+The race detector is fully integrated with the Go tool chain. To build your code with the race detector enabled, just add the -race flag to the command line:
+
 ```
-go run -race main.go
+go test -race mypkg    // test the package
+go run -race mysrc.go  // compile and run the program
+go build -race mycmd   // build the command
+go install -race mypkg // install the package
 ```
 
 ### Interpreting Race Detector Output
@@ -38,10 +45,3 @@ One of the most common causes of race conditions is the improper handling of sha
 
 ### Improper Use of Goroutines
 Goroutines are lightweight threads managed by the Go runtime. While they are powerful, improper use can lead to race conditions. For example, launching goroutines without proper synchronization mechanisms can cause data races.
-
-Ref : https://go.dev/blog/race-detector
-Wiki : https://en.wikipedia.org/wiki/Race_condition
-Dev : https://go.dev/doc/articles/race_detector
-
-Example : https://www.naukri.com/code360/library/go-race-condition-in-golang
-https://thinhdanggroup.github.io/golang-race-conditions/
