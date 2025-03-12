@@ -1,8 +1,5 @@
 ## Go Race conditions 
-Race conditions are among the most insidious and elusive programming errors. They typically cause erratic and mysterious failures, often long after the code has been deployed to production. While Go’s concurrency mechanisms make it easy to write clean concurrent code, they don’t prevent race conditions.
-
-### What is a race condition?
-A race condition occurs when multiple threads try to access and modify the same data.
+Race conditions are a common issue in concurrent programming, where two or more threads or processes access shared data and try to change it at the same time. This can lead to unpredictable behavior and bugs that are notoriously difficult to reproduce and diagnose. 
 
 ![Race Condition ](../../media/go-race-condition.jpg)
 
@@ -45,3 +42,17 @@ One of the most common causes of race conditions is the improper handling of sha
 
 ### Improper Use of Goroutines
 Goroutines are lightweight threads managed by the Go runtime. While they are powerful, improper use can lead to race conditions. For example, launching goroutines without proper synchronization mechanisms can cause data races.
+
+## Resolving Existing Race Conditions
+
+### Step 1: Identify the Race ConditionPermalink
+The first step in resolving a race condition is identifying where it occurs. The Go race detector is a powerful tool for this purpose. You can run your tests with the -race flag to detect any race conditions in your code.
+
+### Step 2: Analyze the Problematic CodePermalink
+Once you’ve identified the race condition, the next step is to analyze the problematic code. Look for shared resources that are being accessed concurrently without proper synchronization. Common culprits include global variables, shared structs, and slices.
+
+### Step 3: Refactor to Implement Proper Synchronization
+After identifying the shared resources causing the race condition, you need to refactor your code to implement proper synchronization. Depending on your use case, you might use mutexes, channels, or atomic operations.
+
+### Step 4: Validate the FixesPermalink
+After refactoring your code to implement proper synchronization, you need to validate the fixes using the Go race detector. Run your tests again with the -race flag to ensure that the race conditions have been resolved.
