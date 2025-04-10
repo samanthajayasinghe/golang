@@ -1,4 +1,4 @@
-## Golang Design Patterns : Creational Design Patterns
+## Golang Design Patterns: Creational 
 
 ## What's a design pattern?
 Design patterns are typical solutions to commonly occurring problems in software design. They are like pre-made blueprints that you can customize to solve a recurring design problem in your code.
